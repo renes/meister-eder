@@ -1,0 +1,17 @@
+{
+  "intents": [
+     {
+      "intent": "PeopleCountIntent",
+      "slots": [
+        {
+          "name": "City",
+          "type": "LIST_OF_CITIES"
+        }
+      ]
+    },
+    {
+      "intent": "MonitorIntent"
+
+    }
+  ]
+}
