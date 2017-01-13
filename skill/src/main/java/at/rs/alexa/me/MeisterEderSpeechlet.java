@@ -3,6 +3,7 @@ package at.rs.alexa.me;
 
 import at.rs.alexa.me.intents.IntentHandler;
 import at.rs.alexa.me.intents.MonitorIntent;
+import at.rs.alexa.me.intents.PeopleCountIntent;
 import com.amazon.speech.slu.Intent;
 import com.amazon.speech.speechlet.*;
 import org.slf4j.Logger;
@@ -19,7 +20,7 @@ public class MeisterEderSpeechlet implements Speechlet {
 
     public MeisterEderSpeechlet() {
         INTENTS.put("MonitorIntent", new MonitorIntent());
-        INTENTS.put("PeopleCountIntent", new MonitorIntent());
+        INTENTS.put("PeopleCountIntent", new PeopleCountIntent());
     }
 
     @Override
