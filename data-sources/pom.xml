@@ -12,5 +12,40 @@
     <name>Data Extraction</name>
     <artifactId>data-sources</artifactId>
 
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.neo4j.driver/neo4j-java-driver -->
+        <dependency>
+            <groupId>org.neo4j.driver</groupId>
+            <artifactId>neo4j-java-driver</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <copy file="data/wienerlinien/wienerlinien-ogd-haltestellen.csv" tofile="${basedir}/target/data/wienerlinien/wienerlinien-ogd-haltestellen.csv"/>
+                                <copy file="data/wienerlinien/wienerlinien-ogd-linien.csv" tofile="${basedir}/target/data/wienerlinien/wienerlinien-ogd-linien.csv"/>
+                                <copy file="data/wienerlinien/wienerlinien-ogd-steige.csv" tofile="${basedir}/target/data/wienerlinien/wienerlinien-ogd-steige.csv"/>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>

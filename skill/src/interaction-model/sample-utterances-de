@@ -1,6 +1,7 @@
 PeopleCountIntent wieviele leute in {City} wohnen
 PeopleCountIntent wieviele leute in {City} leben
-PeopleCountIntent was ist die bevˆlkerungsanzahl von {City}
+PeopleCountIntent was ist die bev√∂lkerungsanzahl von {City}
 PeopleCountIntent wieviele leute wohnen in {City}
-MonitorIntent wann die n‰chste u bahn f‰hrt
-MonitorIntent wann der n‰chste zug geht
+MonitorIntent wann die n√§chste u bahn f√§hrt
+MonitorIntent wann der n√§chste zug geht
+MonitorIntent wann f√§hrt der n√§chste zug von {Station}

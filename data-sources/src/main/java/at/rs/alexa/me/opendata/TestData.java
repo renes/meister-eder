@@ -18,7 +18,7 @@ public class TestData {
     }
 
     public void execute() {
-        String path = "data/noe.csv";
+        String path = "data/population/noe.csv";
 
         List<String> names = new ArrayList();
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
