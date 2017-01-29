@@ -10,15 +10,6 @@
         <module>data-sources</module>
     </modules>
     <name>Meister Eders Alexa Skill</name>
-    <url>http://developer.amazon.com/ask</url>
-
-
-    <repositories>
-        <repository>
-            <id>alexa-skills-kit-repo</id>
-            <url>file://${project.basedir}/repo</url>
-        </repository>
-    </repositories>
 
     <properties>
         <property name="disableRequestSignatureCheck" value="false"/>
