@@ -18,6 +18,8 @@ public class DataGVLowerAustriaPopulationDataProvider implements PopulationDataP
     private static final Logger LOGGER = LoggerFactory.getLogger(PopulationService.class);
 
     private static final String LOWER_AUSTRIA_DATA_URL = "http://open-data.noe.gv.at/RU2/noe_pop_1869-2011_lau2.csv";
+    private static final int INDEX_CITY = 4;
+    private static final int INDEX_POPULATION = 6;
 
     @Override
     public List<PopulationData> getPopulationData() {
@@ -35,8 +37,8 @@ public class DataGVLowerAustriaPopulationDataProvider implements PopulationDataP
                     try {
                         if (result.length >= 4) {
                             PopulationData populationData = new PopulationData();
-                            populationData.setCityName(result[4]);
-                            populationData.setPopulation(Integer.valueOf(result[6]));
+                            populationData.setCityName(result[INDEX_CITY]);
+                            populationData.setPopulation(Integer.valueOf(result[INDEX_POPULATION]));
                             return populationData;
                         } else {
                             return null;
