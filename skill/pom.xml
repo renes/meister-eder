@@ -52,7 +52,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>1.4.4.RELEASE</version>
+            <version>${spring.boot.version}</version>
 
             <exclusions>
                 <exclusion>
@@ -67,7 +67,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>1.4.4.RELEASE</version>
+                <version>${spring.boot.version}</version>
                 <executions>
                     <execution>
                         <goals>

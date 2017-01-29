@@ -6,3 +6,4 @@ target/
 skill/deploy.sh
 skill/src/main/resources/keystore.jks
 tree
+out.csv

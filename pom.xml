@@ -15,6 +15,7 @@
         <property name="disableRequestSignatureCheck" value="true"/>
         <property name="supportedApplicationIds" value=""/>
         <property name="timestampTolerance" value="150"/>
+        <spring.boot.version>1.4.4.RELEASE</spring.boot.version>
     </properties>
 
     <build>
