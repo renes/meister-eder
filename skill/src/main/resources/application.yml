@@ -1,0 +1,10 @@
+server.port: 8084
+log4j.rootLogger: INFO
+
+---
+spring:
+    profiles: ssl
+server.port: 443
+server.ssl.key-store: classpath:keystore.jks
+server.ssl.key-store-password: password
+server.ssl.key-password: password
