@@ -92,3 +92,10 @@ Copy the keystore in the resources folder and adapt the application.yml with nam
 -Dspring.profiles.active=ssl
 ```
 to start your local application using SSL.
+
+See
+```
+https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/testing-an-alexa-skill#create-a-private-key-and-self-signed-certificate-for-testing
+```
+
+for a full documenation.
