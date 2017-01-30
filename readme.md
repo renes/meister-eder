@@ -1,5 +1,7 @@
 # What can you do with that skill?
 
+* Alexa, sag meister eder er soll die steckdose ein schalten
+* Alexa, sag meister eder er soll die steckdose aus schalten
 * Alexa, frag meister eder wieviele leute in Baden wohnen
 * Alexa, frag meister eder wieviele leute in St.Pölten leben
 * Alexa, frag meister eder was ist die Bevölkerungsanzahl von Krems an der Donau
@@ -99,3 +101,12 @@ https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/testin
 ```
 
 for a full documenation.
+
+# Remote Control Power plug
+This just works if you have this skill running on e.g. your personal raspberry PI at home.
+
+See 
+```
+https://github.com/xkonni/raspberry-remote
+```
+For Installation and adapt PowerPlugIntent with your settings

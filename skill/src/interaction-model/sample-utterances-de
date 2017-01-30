@@ -4,3 +4,6 @@ PeopleCountIntent was ist die bevölkerungsanzahl von {City}
 PeopleCountIntent wieviele leute wohnen in {City}
 MonitorIntent wann die nächste u bahn fährt
 MonitorIntent wann der nächste zug geht
+PowerPlugIntent schalte die steckdose {Action}
+PowerPlugIntent steckdose {Action}
+PowerPlugIntent sag meister eder er soll die steckdose {Action} schalten
