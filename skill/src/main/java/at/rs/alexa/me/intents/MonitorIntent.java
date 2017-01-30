@@ -6,10 +6,11 @@ import at.rs.alexa.wienerlinien.WienerLinienServiceException;
 import com.amazon.speech.speechlet.IntentRequest;
 import com.amazon.speech.speechlet.Session;
 import com.amazon.speech.speechlet.SpeechletResponse;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
+@Service
 public class MonitorIntent implements IntentHandler {
 
     private WienerLinienService wienerLinienService = new WienerLinienService();
@@ -34,6 +35,11 @@ public class MonitorIntent implements IntentHandler {
             return ResponseHelper.createSpeechletResponse("Das Wiener Linien Service ist zur Zeit nicht verfügbar.", "", false);
             //TODO keep session open, Ask "Willst du es noch mal versuchen?" and retry it
         }
+    }
+
+    @Override
+    public String getIntentName() {
+        return "MonitorIntent";
     }
 
     private String getSingularOrPuralWording(int departureInMinutes) {

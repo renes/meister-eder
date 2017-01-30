@@ -11,21 +11,24 @@ import com.amazon.speech.speechlet.SpeechletResponse;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Optional;
 
+@Service
 public class PeopleCountIntent implements IntentHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(MeisterEderSpeechlet.class);
+
+    @Value(value = "classpath:cities.csv")
+    private Resource csvFile;
 
     @Override
     public SpeechletResponse handleIntent(IntentRequest request, Session session) {
         Intent intent = request.getIntent();
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource("cities.csv").getFile());
 
         try {
             Map<String, Slot> slots = intent.getSlots();
@@ -37,7 +40,7 @@ public class PeopleCountIntent implements IntentHandler {
             }
 
             String city = citySlot.getValue().replace(".", "").replace(" ", "").toLowerCase();
-            Optional<Integer> count = IOUtils.readLines(new FileInputStream(file)).stream().map(String::toLowerCase).map(s -> s.replace(".", "").replace(" ", "")).filter(s -> s.startsWith(city)).findFirst().map(s -> Integer.valueOf(s.split(";")[1]));
+            Optional<Integer> count = IOUtils.readLines(csvFile.getInputStream()).stream().map(String::toLowerCase).map(s -> s.replace(".", "").replace(" ", "")).filter(s -> s.startsWith(city)).findFirst().map(s -> Integer.valueOf(s.split(";")[1]));
 
             if (count.isPresent()) {
                 return ResponseHelper.createSpeechletResponse("In " + citySlot.getValue() + " wohnen " + count.get() + " personen", "", false);
@@ -50,5 +53,10 @@ public class PeopleCountIntent implements IntentHandler {
             LOGGER.error("Could not open file", e);
             return ResponseHelper.createSpeechletResponse("Leider konnten wir zur Zeit nicht auf die nötigen Daten zugreifen. Bitte versuche es später nochmal", "", false);
         }
+    }
+
+    @Override
+    public String getIntentName() {
+        return "PeopleCountIntent";
     }
 }

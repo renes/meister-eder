@@ -42,8 +42,6 @@ public class WienerLinienService {
             return departuresInXMinutes;
         };
 
-
-
         Optional<List<Integer>> result = worker.execute(listTask);
 
         if (result.isPresent()) {

@@ -2,26 +2,23 @@ package at.rs.alexa.me;
 
 
 import at.rs.alexa.me.intents.IntentHandler;
-import at.rs.alexa.me.intents.MonitorIntent;
-import at.rs.alexa.me.intents.PeopleCountIntent;
 import com.amazon.speech.slu.Intent;
 import com.amazon.speech.speechlet.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
+import java.util.List;
+import java.util.Optional;
 
-
+@Service
 public class MeisterEderSpeechlet implements Speechlet {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MeisterEderSpeechlet.class);
 
-    private final HashMap<String, IntentHandler> INTENTS = new HashMap<>();
-
-    public MeisterEderSpeechlet() {
-        INTENTS.put("MonitorIntent", new MonitorIntent());
-        INTENTS.put("PeopleCountIntent", new PeopleCountIntent());
-    }
+    @Autowired
+    private List<IntentHandler> intentHandlers;
 
     @Override
     public void onSessionStarted(final SessionStartedRequest request, final Session session)
@@ -46,14 +43,13 @@ public class MeisterEderSpeechlet implements Speechlet {
                 session.getSessionId());
 
         Intent intent = request.getIntent();
-        IntentHandler intentHandler = INTENTS.get(intent.getName());
+        Optional<IntentHandler> intentHandler = intentHandlers.stream().filter(currentHandler -> currentHandler.getIntentName().equals(intent.getName())).findFirst();
 
-        if (intentHandler == null) {
+        if (!intentHandler.isPresent()) {
             throw new SpeechletException("Invalid Intent");
         }
 
-        return INTENTS.get(intent.getName()).handleIntent(request, session);
-
+        return intentHandler.get().handleIntent(request, session);
     }
 
 
@@ -62,19 +58,13 @@ public class MeisterEderSpeechlet implements Speechlet {
             throws SpeechletException {
         LOGGER.info("onSessionEnded requestId={}, sessionId={}", request.getRequestId(),
                 session.getSessionId());
-        // any cleanup logic goes here
     }
 
     private SpeechletResponse getWelcomeResponse() {
-        // Create the welcome message.
-        String speechText =
-                "Welcome to the Alexa Skills Kit sample. Please tell me your favorite color by "
-                        + "saying, my favorite color is red";
-        String repromptText =
-                "Please tell me your favorite color by saying, my favorite color is red";
+
+        String speechText = "Welcome to the Meister Eder";
+        String repromptText = "Welcome to the Meister Eder";
 
         return ResponseHelper.createSpeechletResponse(speechText, repromptText, true);
     }
-
-
 }
