@@ -1,7 +1,7 @@
 # What can you do with that skill?
 
-* Alexa, sag meister eder er soll die steckdose ein schalten
-* Alexa, sag meister eder er soll die steckdose aus schalten
+* Alexa, sag meister eder er soll die steckdose einschalten
+* Alexa, sag meister eder er soll die steckdose ausschalten
 * Alexa, frag meister eder wieviele leute in Baden wohnen
 * Alexa, frag meister eder wieviele leute in St.Pölten leben
 * Alexa, frag meister eder was ist die Bevölkerungsanzahl von Krems an der Donau
