@@ -46,19 +46,19 @@ To test POST a valid request json e.g.:
 ```json
 {
   "session": {
-    "sessionId": "SessionId.348a2a2b-889e-4341-a5f5-e8f78d7adf41",
+    "sessionId": "SessionId.34asdas2a2b-889e-4341-a5f5-e8f78d7adf41",
     "application": {
-      "applicationId": "amzn1.ask.skill.ab088d74-fbcc-4a85-b59f-eeccb07bf72c"
+      "applicationId": "amzn1.ask.skill.abasd38d74-fbcc-4a85-b59f-eeccb07bf72c"
     },
     "attributes": {},
     "user": {
-      "userId": "amzn1.ask.account.AEUO7KL74RV6XO3Q2JVNYTG6F66TPBKYRCEZN26JIT4VLFF5CACQEWQOIIZKQVZWLWCNBP4KQPIUZOPG4TU2XIZVNMLKJ67TAHZUUVGTQ7DMW3OCV5FT77EDSHSA3PCVIAV42BBB4EHJRPHNBEE22AUTX4TKT2FE3VKN2X3EMPY3SLEIAVZH2KJ5G6YGXZGRXTBMDTIBKIOCCHA"
+      "userId": "amzn1.ask.account.AEUASD§KL74RV6XO3Q2JVNYTG6F66TPBKYRCEZN26JIT4VLFF5CASDEWRQEWQOIIZKQVZWLWCNBP4KQPIUZOPG4TU2XIZVNMLKJ67TAHZUUVGTQ7DMW3OCV5FT77EDSHSA3PCVIAV42BBB4EHJRPHNBEE22AUTX4TKT2FE3VKN2X3EMPY3SLEIAVZH2KJ5G6YGXZGRXTBMDTIBKIOCCHA"
     },
     "new": true
   },
   "request": {
     "type": "IntentRequest",
-    "requestId": "EdwRequestId.c7c00404-32f3-4b3a-b588-43815610dac4",
+    "requestId": "EdwRequestId.c7c00404-32f3-4b3a-b588-43815634dac4",
     "locale": "de-DE",
     "timestamp": "2017-01-29T19:11:49Z",
     "intent": {
